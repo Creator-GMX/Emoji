@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformador de Emoji/Texto para Imagem - Nindo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;700&family=Dancing+Script:wght@400;700&family=Comfortaa:wght@400;700&family=Fredoka:wght@400;600&family=Lobster&family=Pacifico&family=Righteous&family=Kalam:wght@400;700&family=Patrick+Hand&family=Caveat:wght@400;700&family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎨 Transformador de Emoji/Texto para Imagem</h1>
+            <p>Crie ícones profissionais para GUI no Roblox Studio usando emojis e textos personalizados</p>
+            <div class="features-highlight">
+                <span class="feature-tag">🎮 Roblox Studio</span>
+                <span class="feature-tag">🖼️ Ícones GUI</span>
+                <span class="feature-tag">⚡ Alta Qualidade</span>
+            </div>
+        </header>
+        
+        <main>
+            <div class="input-section">
+                <div class="section-header">
+                    <h3>📝 Configurações do Texto</h3>
+                </div>
+                
+                <div class="form-group">
+                    <label for="textInput">✏️ Digite seu texto ou emoji:</label>
+                    <input type="text" id="textInput" placeholder="Digite aqui... 😊🎉✨" maxlength="100">
+                </div>
+                
+                <div class="controls-grid">
+                    <div class="form-group">
+                        <label for="fontFamily">✨ Fonte do texto:</label>
+                        <select id="fontFamily" class="elegant-select">
+                            <option value="Inter">Inter - Moderna e limpa</option>
+                            <option value="Playfair Display">Playfair - Elegante e sofisticada</option>
+                            <option value="Dancing Script">Dancing Script - Manuscrita romântica</option>
+                            <option value="Comfortaa">Comfortaa - Arredondada e amigável</option>
+                            <option value="Fredoka">Fredoka - Divertida e casual</option>
+                            <option value="Lobster">Lobster - Script luxuosa</option>
+                            <option value="Pacifico">Pacifico - Praia e descontraída</option>
+                            <option value="Righteous">Righteous - Forte e impactante</option>
+                            <option value="Kalam">Kalam - Manuscrita natural</option>
+                            <option value="Patrick Hand">Patrick Hand - Manuscrita casual</option>
+                            <option value="Caveat">Caveat - Manuscrita estilizada</option>
+                            <option value="Satisfy">Satisfy - Manuscrita fluida</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="fontSize">📏 Tamanho da fonte:</label>
+                        <input type="range" id="fontSize" min="20" max="200" value="80">
+                        <span id="fontSizeValue">80px</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="formatSelect">💾 Formato:</label>
+                        <select id="formatSelect" class="elegant-select">
+                            <option value="png">🖼️ PNG (fundo transparente)</option>
+                            <option value="jpeg">📄 JPEG (fundo colorido)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group" id="backgroundColorGroup" style="display: none;">
+                        <label for="backgroundColor">🎨 Cor de fundo (JPEG):</label>
+                        <div class="color-input-wrapper">
+                            <input type="color" id="backgroundColor" value="#ffffff">
+                            <span id="backgroundColorHex">#ffffff</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section-header">
+                    <h3>🖼️ Configurações da Moldura</h3>
+                </div>
+                
+                <div class="frame-controls">
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="enableFrame">
+                            <span class="checkmark"></span>
+                            ✨ Adicionar moldura decorativa
+                        </label>
+                    </div>
+                    
+                    <div id="frameOptions" class="frame-options" style="display: none;">
+                        <div class="controls-grid">
+                            <div class="form-group">
+                                <label for="frameStyle">✨ Estilo da moldura:</label>
+                                <select id="frameStyle" class="elegant-select">
+                                    <option value="solid">━━━ Clássica Sólida</option>
+                                    <option value="gradient">🌈 Gradiente Multicolor</option>
+                                    <option value="neon">💫 Neon Brilhante</option>
+                                    <option value="vintage">🎞️ Vintage Texturizada</option>
+                                    <option value="royal">👑 Real Dourada</option>
+                                    <option value="nature">🌿 Natureza Verde</option>
+                                    <option value="ocean">🌊 Oceano Profundo</option>
+                                    <option value="sunset">🌅 Pôr do Sol</option>
+                                    <option value="galaxy">⭐ Galáxia Cósmica</option>
+                                    <option value="fire">🔥 Chamas Ardentes</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="frameWidth">📏 Espessura:</label>
+                                <input type="range" id="frameWidth" min="5" max="25" value="12">
+                                <span id="frameWidthValue">12px</span>
+                            </div>
+                            
+                            <div class="form-group" id="customFrameColor" style="display: none;">
+                                <label for="frameColor">🎨 Cor personalizada:</label>
+                                <div class="color-input-wrapper">
+                                    <input type="color" id="frameColor" value="#667eea">
+                                    <span id="frameColorHex">#667eea</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="preview-section">
+                <h3>Visualização:</h3>
+                <div class="canvas-container">
+                    <canvas id="previewCanvas" width="400" height="200"></canvas>
+                </div>
+                
+                <div class="download-section">
+                    <button id="downloadBtn" disabled>📥 Baixar Imagem</button>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <div class="credits">
+                <h3>💎 Criado por Nindo</h3>
+                <p>Ferramenta para criar ícones e imagens personalizadas</p>
+                <div class="author-signature">
+                    <p>🌟 <strong>Nindo</strong> - Transformando ideias em ícones incríveis</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
